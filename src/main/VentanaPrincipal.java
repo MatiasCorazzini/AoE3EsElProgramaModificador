@@ -431,19 +431,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox_CivilizacionesActionPerformed
 
     private void button_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_infoActionPerformed
-        JOptionPane.showMessageDialog(null, "Matias Corazzini te dice:\n\n Al aplicar los cambios, se reescribirá el archivo\n que has seleccionado.\n"
+        JOptionPane.showMessageDialog(null, "El desarrollador te dice:\n\n Al aplicar los cambios, se reescribirá el archivo\n que has seleccionado.\n"
                 + " Esto es una BETA desarrollada por un estudiante.\n"
-                + " El desarrolador no se hace cargo\n de posibles daños en su metropolis\n Ante cualquier consulta llame al 755-0822\n a ver quien contesta.");
+                + " El desarrolador no se hace cargo\n de posibles daños en su metropolis.\n Ante cualquier consulta llame al 755-0822\n a ver quien contesta (?");
     }//GEN-LAST:event_button_infoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null, "BIENVENIDO al TUTO pa', aca te voy a encenar a usar mi programa bien perron.\n\n Para comenzar tendras que ingresar la ruta\n"
-                + " de tus metropolis guardadas, para eso puedes,\n seleccionar 'Busqueda Automatica', o bien, ingresarla manualmente.\n"
+                + " de tus metropolis guardadas, para eso puedes,\n seleccionar 'Busqueda Automatica', o bien,\n ingresarla manualmente (No esta acabada).\n"
                 + " Ej: 'C:\\Users\\pcname\\Documents\\My Games\\Age of Empires 3\\Savegame'\n\n Una vez configurada la ruta, podras desplegar una lista con las\n"
                 + " distintas metropolis que tengas y automaticamente se llenaran los\n"
                 + " espacios; los cuales podras modificar a tu gusto.\n Una vez hayas realizado los cambios presiona en Aplicar Cambios.\n\n"
                 + " Este es un programa de practica por lo que los bugs y problemas\n no van a faltar, el codigo esta abierto a quien quiera modificarlo\n"
-                + " en mi GitHub: ");
+                + " en mi GitHub:\n https://github.com/MatiasCorazzini/AoE3EsElProgramaModificador");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField_explNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_explNombreActionPerformed
