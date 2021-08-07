@@ -24,6 +24,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     public File ruta;
     File carpeta;
+    boolean vandera = false;
 
     SetIcono SetIcono = new SetIcono();
     AplicarCambios AplicarCambios = new AplicarCambios();
@@ -165,15 +166,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel_civ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField_civNombre)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(button_Bandera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addComponent(jLabel5)
@@ -189,7 +181,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                         .addGap(2, 2, 2)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jSpinner_xp, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                                    .addComponent(jSpinner_nivel))))
+                                    .addComponent(jSpinner_nivel)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextField_civNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(button_Bandera, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator2)
                             .addGroup(layout.createSequentialGroup()
@@ -289,15 +291,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         File[] archivos = carpeta.listFiles();
 
         //Verifica que haya archivos
-        if (archivos != null) {
+        if (archivos != null && vandera == false) {
             for (int i = 0; i < archivos.length; i++) {
 
                 if (archivos[i].getName().contains("sp_")) {
                     jComboBox_Civilizaciones.addItem(archivos[i].getName());
                 }
             }
+            vandera = true;
         } else {
-            JOptionPane.showMessageDialog(null, "No se ha encontrado la ruta, F ");
+            JOptionPane.showMessageDialog(null, "No se pudo rellenar la lista...");
         }
     }//GEN-LAST:event_button_BuscarArchivosActionPerformed
 
@@ -471,15 +474,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         File[] archivos = carpeta.listFiles();
         
-        if (archivos != null) {
+        if (archivos != null && vandera == false) {
             for (int i = 0; i < archivos.length; i++) {
 
                 if (archivos[i].getName().contains("sp_")) {
                     jComboBox_Civilizaciones.addItem(archivos[i].getName());
                 }
             }
+            vandera = true;
         } else {
-            JOptionPane.showMessageDialog(null, "No se ha encontrado la ruta, F ");
+            JOptionPane.showMessageDialog(null, "No se pudo rellenar la lista...");
         }
     }//GEN-LAST:event_jTextField_BuscarArchivosManualActionPerformed
 
