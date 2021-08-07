@@ -1,5 +1,7 @@
 package main;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.JOptionPane;
 import java.io.IOException;
@@ -34,6 +36,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setTitle("AoE3EsElProgramaModificador    -Version 0.1- ");
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/Fluffy.png")));
     }
 
     /**
@@ -464,7 +467,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_button_aplicarCambiosActionPerformed
 
     private void jTextField_BuscarArchivosManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_BuscarArchivosManualActionPerformed
+        carpeta = new File(jTextField_BuscarArchivosManual.getText());
+        
+        File[] archivos = carpeta.listFiles();
+        
+        if (archivos != null) {
+            for (int i = 0; i < archivos.length; i++) {
 
+                if (archivos[i].getName().contains("sp_")) {
+                    jComboBox_Civilizaciones.addItem(archivos[i].getName());
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la ruta, F ");
+        }
     }//GEN-LAST:event_jTextField_BuscarArchivosManualActionPerformed
 
     /**
@@ -530,4 +546,5 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_explNombre;
     private javax.swing.JTextField jTextField_perroNombre;
     // End of variables declaration//GEN-END:variables
+
 }
