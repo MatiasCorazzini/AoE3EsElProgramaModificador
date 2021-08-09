@@ -308,9 +308,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         if (evt.getSource() == jComboBox_Civilizaciones) {
 
-            String rutaX = System.getProperty("user.home");
+            
 
-            ruta = new File(rutaX + "/Documents/My Games/Age of Empires 3/Savegame/" + jComboBox_Civilizaciones.getSelectedItem().toString());
+            ruta = new File(carpeta + "/" + jComboBox_Civilizaciones.getSelectedItem().toString());
             System.out.println(ruta);
 
             // Instantiate the Factory
@@ -421,7 +421,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
                             case "Ottomans":
                                 jLabel_civ.setText("Otomanos");
-                                button_Bandera.setIcon(SetIcono.setIcono("/images/OttomansFlag.png", button_Bandera));
+                                button_Bandera.setIcon(SetIcono.setIcono("/images/OttomanFlag.png", button_Bandera));
                                 System.out.println("These are Ottomans");
                                 break;
 
